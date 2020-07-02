@@ -11,22 +11,6 @@ import Profile from './components/Profile/Profile'
 import NotFound from './components/NotFound'
 import Search from './components/Search/NotFound'
 
-/* 
-+ production code  video  问老师
-+ sold原则
-
-
-
-=====
-删代码-还差一部分json说明文件
-unit test  TDD 
-flow react 
-readme
-request log
-注释格式化
-（saga或者mobx）
-*/
-
 class App extends Component {
   render() {
     return (
