@@ -29,7 +29,8 @@ class Header extends Component {
 				<AppBar position="static" style={{ backgroundColor: '#4B0082'}}>
 					<Toolbar className={classes.space}>
 						<Link to="/" className={classes.logo}>Twit</Link>
-						<SearchForm />         
+						<SearchForm />
+						<button  />         
 					</Toolbar>
 				</AppBar>
 			</div>
