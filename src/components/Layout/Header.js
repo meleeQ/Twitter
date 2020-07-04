@@ -39,6 +39,4 @@ class Header extends Component {
 	}
 }
 
-
-
 export default (withStyles(styles)(Header))
