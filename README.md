@@ -33,3 +33,12 @@ Front End
  axios for API calls 
 Back End
  REST API made with Node and Express
+ 
+ More 
+ test summary: improvements:
+1 not enough coding notes
+2 increased workload to add typescript  when create app without typescript in the first place.
+3 change redux-thunk to redux-saga
+4 not enough test on front-end component
+just some points I think should improve if have more time 
+
