@@ -48,7 +48,7 @@ const styles = (theme) => ({
 		}
 	}
 })
-
+// search name component by type Enter to execute
 class SearchForm extends Component {
 	constructor (props) {
 		super(props)

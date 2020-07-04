@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Grid from '@material-ui/core/Grid'
 import Header from './Header'
 
+// main style wrapper route
 const Main = ({ children }) => (
     <div>
         <Header />
@@ -12,4 +13,5 @@ const Main = ({ children }) => (
         </Grid>
     </div>
 )
+
 export default Main

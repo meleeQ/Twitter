@@ -13,11 +13,8 @@ const styles = {
 		minWidth: 60,
 		margin: '4px 10px 4px 4px'
 	},
-	login: {
-		marginBottom: 5
-	},
-	time: {
-		marginLeft: 10,
+	create_time: {
+		marginLeft: 30,
 		color: '#bbb',
 		fontSize: 14
 	},
@@ -28,12 +25,10 @@ const styles = {
 	}
 	
 }
-/* 
- */
+// Item for ListItem child that show user basic info
 class Item extends Component {
 	render () {
 		const { classes, item } = this.props
-		
 		return (
 			<Paper className={classes.paper}>
 				<div 
@@ -41,19 +36,15 @@ class Item extends Component {
 					style={{
 						backgroundColor: `#${item.user_id.slice(item.user_id.length - 3)}`,
 						backgroundImage:  `url(${item.profile_image})`,
-					}}
-					
+					}}					
 				/>
-			
 				<div>
-					<h3 className={classes.login}>
-				<Link to={`/profile/${item.user_id}`}>{item.user_name}{item.protected}</Link>
+					<h3>
+						<Link to={`/profile/${item.user_id}`}>{item.user_name}{item.protected}</Link>
 						<div>
-						<span className={classes.followers}>followers:{item.followers}</span>
-						<span className={classes.time}>created_at:{
-						(new Date(item.create_time)).toLocaleString()}</span>
-						</div>
-						
+							<span className={classes.followers}>followers:{item.followers}</span>
+							<span className={classes.create_time}>created_at:{(new Date(item.create_time)).toLocaleString()}</span>
+						</div>						
 					</h3>
 					{item.text}
 				</div>

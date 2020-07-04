@@ -9,12 +9,6 @@ const styles = {
 	paper: {
 		padding: 10
 	},
-	location: {
-	},
-	name: {
-		color: '#888',
-		marginBottom: 10
-	},
 	detailsBlock: {
 		display: 'flex'
 	},
@@ -27,53 +21,39 @@ const styles = {
 		textTransform: 'uppercase',
 		fontSize: 10,
 		fontWeight: 'normal'
-	},
-	btnBlock: {
-		width: '100%',
-		textAlign: 'right'
-	},
-	btnFollow: {
-		backgroundColor: '#9400D3',
-		color: 'white',
-		'&:hover': {
-			color: '#9400D3',
-			borderColor: '#9400D3',
-			backgroundColor: 'white'
-		}
 	}
 }
-
+// UserProfile to show profile and twitter item
 class Profile extends Component {
-	constructor (props) {
+	constructor(props) {
 		super(props)
 	}
 	componentDidMount() {
 		this.props.getUserProfile(this.props.match.params.userId)
 	}
-
-
-	render () {
-		const { 
+	render() {
+		const {
 			classes,
 			loadingProfile,
 			twits
 		} = this.props
 		let followBtns;
 		let items;
+		let profiles;
 		let profile;
-		let profiles =twits&&twits.find((item,index) => {
-			if(index==0){
-				profile=item.user
-				return ;
+		profiles = twits && twits.find((item, index) => {
+			if (index == 0) {
+				profile = item.user
+				return;
 			}
 		});
-		items = twits && twits.map(element => <Twit key={element.tweet_id} twit={element}/>)
+		items = twits && twits.map(element => <Twit key={element.tweet_id} twit={element} />)
 		let profileInfo
-		if ( profile) {
+		if (profile) {
 			profileInfo = (
 				<Paper className={classes.paper}>
 					<h1>{profile.name}</h1>
-					<div className={classes.location}>{profile.location}</div>
+					<div>{profile.location}</div>
 					<div className={classes.detailsBlock}>
 						<div className={classes.detail}	>
 							{items.length}
@@ -83,16 +63,15 @@ class Profile extends Component {
 							{profile.followers_count}
 							<span className={classes.detailTitle}>followers</span>
 						</div>
-						{ followBtns }
+						{followBtns}
 					</div>
 				</Paper>
 			)
 		}
-
 		return (
 			<div>
-				{ loadingProfile ? <div>Loading</div> : profileInfo }
-				{  items }
+				{loadingProfile ? <div>Loading</div> : profileInfo}
+				{items}
 			</div>
 		)
 	}
@@ -101,11 +80,8 @@ class Profile extends Component {
 const mapStateToProps = (state) => {
 	return {
 		twits: state.profile.twits,
-    }
-	
+	}
+
 }
 
-export default connect(mapStateToProps, 
-	{ 		
-		getUserProfile
-	})(withStyles(styles)(Profile))
+export default connect(mapStateToProps, { getUserProfile })(withStyles(styles)(Profile))

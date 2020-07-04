@@ -24,13 +24,9 @@ const styles = {
 		marginLeft: 10,
 		color: '#bcb',
 		fontSize: 14
-	},
-	user:{
-
 	}
-	
 }
-//Hooks
+// user  tweet
 class Twit extends Component {
 	render () {
 		const { classes, twit } = this.props
@@ -39,18 +35,16 @@ class Twit extends Component {
 				<div 
 					className={classes.content}
 					style={{
-					//	backgroundColor: `#${twit.user.id_str.slice(twit.user.id.length - 3)}`,
 						backgroundImage:  `url(${twit.user.profile_image_url})`,
 					}}					
 				/>		
 				<div>
 					<h3 className={classes.source}>				
-					<div dangerouslySetInnerHTML={{__html:twit.source}} />
-						<div>
-						<span className={classes.favorite_counts}>favorites:{twit.favorite_counts}</span>
-						<span className={classes.time}>created_at:{
-						(new Date(twit.create_time)).toLocaleString()}</span>
-						</div>
+						<div dangerouslySetInnerHTML={{__html:twit.source}} />
+							<div>
+								<span className={classes.favorite_counts}>favorites:{twit.favorite_counts}</span>
+								<span className={classes.time}>created_at:{(new Date(twit.create_time)).toLocaleString()}</span>
+							</div>
 					</h3>
 					
 				</div>
@@ -58,6 +52,5 @@ class Twit extends Component {
 		)
 	}
 }
-
 
 export default withStyles(styles)(Twit)

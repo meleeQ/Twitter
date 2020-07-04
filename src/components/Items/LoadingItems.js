@@ -13,7 +13,7 @@ const styles = {
 		color: '#8A2BE2'
 	}
 }
-
+// component when data loading 
 const LoadingItems = ({ classes }) => (
 	<div className={classes.load}>
 		<CircularProgress className={classes.loadIcon}/>
