@@ -2,9 +2,7 @@ import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 import { connect } from 'react-redux'
-import { 
-	getUserProfile,
-} from '../../actions/profileActions'
+import { getUserProfile } from '../../actions/profileActions'
 import Twit from '../Twits/Twit'
 
 const styles = {
@@ -12,7 +10,6 @@ const styles = {
 		padding: 10
 	},
 	location: {
-
 	},
 	name: {
 		color: '#888',
@@ -50,7 +47,6 @@ class Profile extends Component {
 	constructor (props) {
 		super(props)
 	}
-
 	componentDidMount() {
 		this.props.getUserProfile(this.props.match.params.userId)
 	}
@@ -65,7 +61,6 @@ class Profile extends Component {
 		let followBtns;
 		let items;
 		let profile;
-		//
 		let profiles =twits&&twits.find((item,index) => {
 			if(index==0){
 				profile=item.user

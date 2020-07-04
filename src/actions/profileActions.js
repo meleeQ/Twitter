@@ -12,7 +12,7 @@ export const getUserProfile = (userId) => dispatch => {
 		}))
 		.catch(err => console.log(err))
 }
-//TODO：改名字
+
 export const searchUser = (searchData) => dispatch => {
 	const name=searchData.name;
 	axios.get(`http://localhost:5000/api/users/search/${name}`)

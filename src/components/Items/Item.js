@@ -62,5 +62,4 @@ class Item extends Component {
 	}
 }
 
-
 export default withStyles(styles)(Item)
