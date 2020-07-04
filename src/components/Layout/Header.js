@@ -21,9 +21,6 @@ const styles = {
 }
 // Header include a logo and searchForm
 class Header extends Component {
-	constructor (props) {
-		super(props);
-	}
 	render () {
         const { classes } = this.props;
 		return (

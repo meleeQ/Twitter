@@ -5,9 +5,6 @@ import LoadingItems from './LoadingItems'
 
 // User List 
 class ListItem extends Component {
-	constructor(props) {
-		super(props)
-	}
 	render() {
 		const { list, loading } = this.props
 		const items = list && list.map(element => <Item key={element.user_id} item={element} />)

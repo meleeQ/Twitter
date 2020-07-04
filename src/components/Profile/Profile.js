@@ -25,9 +25,6 @@ const styles = {
 }
 // UserProfile to show profile and twitter item
 class Profile extends Component {
-	constructor(props) {
-		super(props)
-	}
 	componentDidMount() {
 		this.props.getUserProfile(this.props.match.params.userId)
 	}
@@ -42,7 +39,7 @@ class Profile extends Component {
 		let profiles;
 		let profile;
 		profiles = twits && twits.find((item, index) => {
-			if (index == 0) {
+			if (index === 0) {
 				profile = item.user
 				return;
 			}
